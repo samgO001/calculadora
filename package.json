@@ -1,0 +1,23 @@
+{
+  "name": "calculadora-terminal",
+  "version": "1.0.0",
+  "description": "Calculadora de terminal con todas las operaciones matemáticas - Lab 9",
+  "main": "calculadora-terminal.js",
+  "scripts": {
+    "start": "node calculadora-terminal.js",
+    "calculadora": "node calculadora-terminal.js"
+  },
+  "keywords": [
+    "calculadora",
+    "terminal",
+    "matematicas",
+    "nodejs",
+    "lab9"
+  ],
+  "author": "Estudiante Lab 9",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
+
