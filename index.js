@@ -108,8 +108,29 @@ function factorial() {
 function exponente() {
     const numeros = obtenerNumeros();
     if (numeros) {
+        // Validar exponentes muy grandes
+        if (Math.abs(numeros.num2) > 1000) {
+            alert('⚠️ El exponente es muy grande y puede causar problemas de rendimiento');
+            return;
+        }
+        
         const resultado = Math.pow(numeros.num1, numeros.num2);
-        mostrarResultado('Exponente', resultado);
+        
+        // Verificar si el resultado es válido
+        if (!isFinite(resultado)) {
+            alert('❌ Error: El resultado es infinito o no es un número válido');
+            return;
+        }
+        
+        // Formatear resultado
+        let resultadoFormateado;
+        if (Math.abs(resultado) > 1e6 || Math.abs(resultado) < 1e-6) {
+            resultadoFormateado = resultado.toExponential(4);
+        } else {
+            resultadoFormateado = Number.isInteger(resultado) ? resultado : resultado.toFixed(4);
+        }
+        
+        mostrarResultado('Exponente', resultadoFormateado);
     }
 }
 
