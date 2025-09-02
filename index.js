@@ -84,7 +84,13 @@ function factorial() {
     }
     
     if (num1 < 0 || !Number.isInteger(num1)) {
-        alert('El factorial solo se puede calcular para números enteros no negativos');
+        alert('❌ Error: El factorial solo se puede calcular para números enteros no negativos');
+        return;
+    }
+    
+    // Validar números muy grandes para evitar desbordamiento
+    if (num1 > 170) {
+        alert('⚠️ El número es muy grande para calcular el factorial con precisión');
         return;
     }
     
@@ -93,7 +99,9 @@ function factorial() {
         resultado *= i;
     }
     
-    mostrarResultado('Factorial', resultado);
+    // Formatear resultado para números grandes
+    const resultadoFormateado = resultado.toLocaleString('es-ES');
+    mostrarResultado('Factorial', resultadoFormateado);
 }
 
 // Función para calcular el exponente de un número
