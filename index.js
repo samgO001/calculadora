@@ -43,6 +43,11 @@ function multiplicar() {
     if (numeros) {
         const resultado = numeros.num1 * numeros.num2;
         mostrarResultado('Multiplicación', resultado);
+        
+        // Validación adicional para números muy grandes
+        if (Math.abs(resultado) > Number.MAX_SAFE_INTEGER) {
+            alert('⚠️ El resultado es muy grande y puede no ser preciso');
+        }
     }
 }
 
