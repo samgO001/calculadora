@@ -144,10 +144,29 @@ function raizCuadrada() {
     }
     
     if (num1 < 0) {
-        alert('No se puede calcular la raíz cuadrada de un número negativo');
+        alert('❌ Error: No se puede calcular la raíz cuadrada de un número negativo');
+        return;
+    }
+    
+    // Validar números muy grandes
+    if (num1 > 1e308) {
+        alert('⚠️ El número es muy grande para calcular la raíz cuadrada con precisión');
         return;
     }
     
     const resultado = Math.sqrt(num1);
-    mostrarResultado('Raíz Cuadrada', resultado);
+    
+    // Formatear resultado
+    let resultadoFormateado;
+    if (resultado === 0) {
+        resultadoFormateado = '0';
+    } else if (Math.abs(resultado) < 1e-6) {
+        resultadoFormateado = resultado.toExponential(6);
+    } else if (Number.isInteger(resultado)) {
+        resultadoFormateado = resultado;
+    } else {
+        resultadoFormateado = resultado.toFixed(6);
+    }
+    
+    mostrarResultado('Raíz Cuadrada', resultadoFormateado);
 }
