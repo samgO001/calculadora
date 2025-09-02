@@ -56,11 +56,21 @@ function dividir() {
     const numeros = obtenerNumeros();
     if (numeros) {
         if (numeros.num2 === 0) {
-            alert('No se puede dividir por cero');
+            alert('❌ Error: No se puede dividir por cero');
             return;
         }
+        
         const resultado = numeros.num1 / numeros.num2;
-        mostrarResultado('División', resultado);
+        
+        // Verificar si el resultado es infinito
+        if (!isFinite(resultado)) {
+            alert('⚠️ El resultado es infinito o no es un número válido');
+            return;
+        }
+        
+        // Mostrar resultado con formato
+        const resultadoFormateado = Number.isInteger(resultado) ? resultado : resultado.toFixed(4);
+        mostrarResultado('División', resultadoFormateado);
     }
 }
 
