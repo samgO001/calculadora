@@ -46,7 +46,7 @@ function multiplicar() {
         
         // Validación adicional para números muy grandes
         if (Math.abs(resultado) > Number.MAX_SAFE_INTEGER) {
-            alert('⚠️ El resultado es muy grande y puede no ser preciso');
+            alert(' El resultado es muy grande y puede no ser preciso');
         }
     }
 }
@@ -56,7 +56,7 @@ function dividir() {
     const numeros = obtenerNumeros();
     if (numeros) {
         if (numeros.num2 === 0) {
-            alert('❌ Error: No se puede dividir por cero');
+            alert(' Error: No se puede dividir por cero');
             return;
         }
         
@@ -64,7 +64,7 @@ function dividir() {
         
         // Verificar si el resultado es infinito
         if (!isFinite(resultado)) {
-            alert('⚠️ El resultado es infinito o no es un número válido');
+            alert(' El resultado es infinito o no es un número válido');
             return;
         }
         
@@ -84,13 +84,13 @@ function factorial() {
     }
     
     if (num1 < 0 || !Number.isInteger(num1)) {
-        alert('❌ Error: El factorial solo se puede calcular para números enteros no negativos');
+        alert(' Error: El factorial solo se puede calcular para números enteros no negativos');
         return;
     }
     
     // Validar números muy grandes para evitar desbordamiento
     if (num1 > 170) {
-        alert('⚠️ El número es muy grande para calcular el factorial con precisión');
+        alert(' El número es muy grande para calcular el factorial con precisión');
         return;
     }
     
@@ -110,7 +110,7 @@ function exponente() {
     if (numeros) {
         // Validar exponentes muy grandes
         if (Math.abs(numeros.num2) > 1000) {
-            alert('⚠️ El exponente es muy grande y puede causar problemas de rendimiento');
+            alert(' El exponente es muy grande y puede causar problemas de rendimiento');
             return;
         }
         
@@ -118,7 +118,7 @@ function exponente() {
         
         // Verificar si el resultado es válido
         if (!isFinite(resultado)) {
-            alert('❌ Error: El resultado es infinito o no es un número válido');
+            alert(' Error: El resultado es infinito o no es un número válido');
             return;
         }
         
@@ -144,13 +144,13 @@ function raizCuadrada() {
     }
     
     if (num1 < 0) {
-        alert('❌ Error: No se puede calcular la raíz cuadrada de un número negativo');
+        alert(' Error: No se puede calcular la raíz cuadrada de un número negativo');
         return;
     }
     
     // Validar números muy grandes
     if (num1 > 1e308) {
-        alert('⚠️ El número es muy grande para calcular la raíz cuadrada con precisión');
+        alert(' El número es muy grande para calcular la raíz cuadrada con precisión');
         return;
     }
     
